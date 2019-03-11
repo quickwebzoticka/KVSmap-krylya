@@ -888,7 +888,38 @@ $(function() {
     }
 
     filterMarkers = function (category) {
-      map.panTo(new google.maps.LatLng(59.821847, 30.329117));
+      if (category === "gym") {
+          map.panTo(new google.maps.LatLng(59.840257, 30.337298));
+        }
+      if (category === "bycicle") {
+          map.panTo(new google.maps.LatLng(59.821847, 30.329117));
+        }
+
+      if (category === "workout") {
+          map.panTo(new google.maps.LatLng(59.821847, 30.329117));
+        }
+      if (category === "jump") {
+          map.panTo(new google.maps.LatLng(59.832270, 30.364160));
+        }
+      if (category === "fun") {
+          map.panTo(new google.maps.LatLng(59.842626, 30.328417));
+        }
+      if (category === "spa") {
+          map.panTo(new google.maps.LatLng(59.842626, 30.328417));
+        }
+      if (category === "healthfood") {
+          map.panTo(new google.maps.LatLng(59.831832, 30.338550));
+        }
+      if (category === "park") {
+          map.panTo(new google.maps.LatLng(59.838698, 30.324380));
+        }
+      if (category === "pool") {
+          map.panTo(new google.maps.LatLng(59.836042, 30.354153));
+        }
+      if (category === "ski") {
+          map.panTo(new google.maps.LatLng(59.818371, 30.316061));
+        }
+      // map.panTo(new google.maps.LatLng(59.821847, 30.329117));
       map.setZoom(14);
         gmarkers1.map((marker) => {
             if (marker.category == category || category.length === 0 || marker.category == "logo") {
@@ -936,8 +967,9 @@ $(function() {
 
             var text = $(this).attr("data-filter-map");
 
-
+            console.log(text);
             if(text) filterMarkers(text);
+            
             else moveToLocation();
             return false;
         }
